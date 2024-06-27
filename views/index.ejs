@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LaughCorner</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>What type of jokes do you want?</h1>
+  </header>
+  
+  <main>
+    <form action="/get-joke" method="post">
+      <button type="submit" name="category" value="Programming">Programming</button>
+      <button type="submit" name="category" value="Dark">Dark</button>
+      <button type="submit" name="category" value="Spooky">Spooky</button>
+      <button type="submit" name="category" value="Christmas">Christmas</button>
+      <button type="submit" name="category" value="Pun">Pun</button>
+      <button type="submit" name="category" value="Misc">Misc</button>
+      <button type="submit" name="category" value="Any">Any</button>
+    </form>
+
+    <% if (locals.Joke) { %>
+      <div class="joke-container">
+        <h2><%= Joke.category %></h2>
+        <p><%= Joke.joke %></p>
+      </div>
+    <% } %>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 LaughCorner</p>
+    <p>Follow us on 
+      <a href="https://facebook.com">Facebook</a>, 
+      <a href="https://twitter.com">Twitter</a>, 
+      <a href="https://instagram.com">Instagram</a>
+    </p>
+  </footer>
+</body>
+</html>
